@@ -28,8 +28,6 @@
 
 .po_item .content {
     position: absolute;
-    height: 0;
-    width: 0;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -69,37 +67,72 @@
 }
 
 .po_view_btn {
-    background: var(--bg-color);
-    border: solid 1px var(--text-color);
+    background: transparent;
+    border: solid 1px var(--secondary-color);
     padding: 6px 14px;
     text-align: center;
     font-size: 1rem;
     cursor: pointer;
-    color: var(--text-color);
+    color: var(--secondary-color);
     margin-top: 8px;
     display: inline-block;
 }
 
-.po_view_btn:hover {
-    background: var(--text-color);
-    color: var(--bg-color);
+/* ── Modal theming ── */
+
+/* Override Bootstrap's white modal background with the site's theme */
+.po_modal .modal-content {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    border: 1px solid rgba(128, 128, 128, 0.35);
 }
 
-/* Modal styles */
 .po_modal .modal-header {
-    border-bottom: 2px solid var(--secondary-color, #eee);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.25);
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .po_modal .modal-title {
-    font-weight: 700;
+    color: var(--text-color);
+    font-family: Marcellus, serif;
     font-size: 1.3rem;
     letter-spacing: 0.03em;
 }
 
+.po_modal .modal-body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.po_modal .modal-footer {
+    background-color: var(--bg-color);
+    border-top: 1px solid rgba(128, 128, 128, 0.25);
+    justify-content: flex-end;
+}
+
+/* Make Bootstrap's close (×) button visible on dark background */
+.po_modal .btn-close {
+    filter: invert(1) grayscale(100%);
+    opacity: 0.8;
+}
+
+[data-theme="light"] .po_modal .btn-close {
+    filter: none;
+    opacity: 0.6;
+}
+
+/* Backdrop opacity */
+.po_modal .modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+/* ── Badges ── */
 .po_modal_meta {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin-bottom: 1rem;
 }
 
 .po_badge {
@@ -117,7 +150,7 @@
 }
 
 .po_badge_date {
-    background: #4a4a4a;
+    background: #555;
     color: #fff;
 }
 
@@ -127,12 +160,7 @@
 }
 
 .po_modal_details {
-    margin-top: 1rem;
-    line-height: 1.75;
+    line-height: 1.8;
     font-size: 1rem;
-}
-
-.po_modal .modal-footer {
-    border-top: none;
-    justify-content: flex-end;
+    color: var(--text-color);
 }
