@@ -1,210 +1,190 @@
-const logotext = "SHAYEN";
+const logotext = "DELECIA";
+
 const meta = {
-    title: "Shayen Ramsahai",
-    description: "I am Shayen Ramsahai _ Engineer _ PhD cadidate in Blockchain adoption _ Currently residing in the Isle of Man",
+    title: "Delecia Ramsahai",
+    description: "Civil & Project Engineer | Isle of Man | Sustainable Infrastructure | Water & Drainage Engineering",
 };
 
 const introdata = {
-    title: "Shayen Ramsahai",
+    title: "Delecia Ramsahai",
     animated: {
-        first: "Web3.0 researcher",
-        second: "Crypto currency and Blockchain specialist",
-        third: "Technology enthusiast",
+        first: "Civil & Project Engineer",
+        second: "Sustainable Infrastructure Specialist",
+        third: "Water & Drainage Engineering Expert",
     },
-    description: "",
-    your_img_url: "https://images.unsplash.com/photo-1514790193030-c89d266d5a9d",
+    description: "Experienced Civil Engineer with over 10 years across South Africa, Ireland and the Isle of Man — specialising in drainage, water infrastructure, BIM modelling, and sustainable project delivery.",
+    your_img_url: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=900&q=80",
 };
 
 const dataabout = {
     title: "A bit about myself",
-    aboutme: "",
+    aboutme: "I am an experienced Civil and Project Engineer with a strong focus on sustainable solutions and a drive for innovation. Throughout my career I have worked on varied infrastructure projects, applying practical and data-driven approaches to enhance efficiency, ensure environmental responsibility, and prioritise health and safety on-site. I have led initiatives to implement safety training programmes, conducted site inspections, and ensured compliance with local regulations and industry standards. I am committed to creating environments where team well-being is a priority while delivering solutions that support long-term sustainability. Based in the Isle of Man, I hold memberships with Engineers Ireland (MIEI) and Engineers Without Borders.",
 };
-const qualifications = [{
-        degree: "Bachelor of Technology: Electronic Engineering",
+
+const qualifications = [
+    {
+        degree: "N-Dip Civil Engineering",
         university: "Durban University of Technology (DUT)",
-        country: "South Africa"
+        country: "South Africa",
     },
     {
-        degree: "Bachelor of Technology: Management",
-        university: "Durban University of Technology (DUT)",
-        country: "South Africa"
+        degree: "B-Tech Civil Engineering (Water Engineering)",
+        university: "University of South Africa (UNISA)",
+        country: "South Africa",
     },
     {
-        degree: "Master of Science: Blockchain and Digital Currencies",
+        degree: "MSc Blockchain and Digital Currencies",
         university: "University of Nicosia (UNIC)",
-        country: "Cyprus"
-    },
-    {
-        degree: "PhD in Business Administration: Blockchain adoption - in progress",
-        university: "University of Nicosia (UNIC)",
-        country: "Cyprus"
-    },
-];
-const worktimeline = [{
-        jobtitle: "IT Engineer",
-        where: "Derivco - Isle of Man",
-        date: "2019-present",
-    },
-    {
-        jobtitle: "Software Quality Engineer",
-        where: "Derivco - South Africa",
-        date: "2016-2019",
-    },
-    {
-        jobtitle: "Quality Assurance",
-        where: "Derivco - South Africa",
-        date: "2013-2016",
+        country: "Cyprus",
     },
 ];
 
-const skills = [{
-        name: "Firewall provisioning",
-        value: 80,
+const worktimeline = [
+    {
+        jobtitle: "Civil Project Engineer",
+        where: "Nicholas O'Dwyer Consulting Engineers — Northern Ireland",
+        date: "Aug 2021 – Present",
     },
     {
-        name: "Server provisioning",
-        value: 85,
+        jobtitle: "Graduate Civil Engineer",
+        where: "Nicholas O'Dwyer Consulting Engineers — Northern Ireland",
+        date: "Aug 2020 – Aug 2021",
     },
     {
-        name: "SQL admin",
-        value: 80,
+        jobtitle: "Design Engineer",
+        where: "TOBIN Consulting Engineers",
+        date: "Feb 2019 – Aug 2021",
     },
     {
-        name: "MS Azure DevOps",
-        value: 80,
+        jobtitle: "Engineer / Technologist",
+        where: "Golder Associates",
+        date: "Feb 2018 – Feb 2019",
     },
     {
-        name: "F5 loadbalancing",
-        value: 80,
+        jobtitle: "Bridge & Civil Engineering Technician",
+        where: "SMEC South Africa — Durban & Pretoria",
+        date: "Aug 2015 – Feb 2018",
     },
-     {
-        name: "Monitoring and observability",
-        value: 85,
+    {
+        jobtitle: "Intern / Civil Engineering Technician",
+        where: "BVI Consulting Engineers",
+        date: "Jan 2013 – Aug 2015",
     },
 ];
 
-const services = [{
-        title: "Casino enterprise solutions",
-        description: "",
+const skills = [
+    { name: "AutoCAD Civil 3D", value: 90 },
+    { name: "Revit – 3D BIM Modelling", value: 85 },
+    { name: "Causeway Flow – Drainage", value: 88 },
+    { name: "Hydraulic Modelling & GIS", value: 82 },
+    { name: "Project Management", value: 85 },
+    { name: "Tedds", value: 80 },
+];
+
+const services = [
+    {
+        title: "Drainage & Surface Water Design",
+        description: "Design and evaluation of drainage and surface water management systems, integrating sustainable and nature-based solutions.",
     },
     {
-        title: "Blockchain design",
-        description: "",
+        title: "Water & Wastewater Infrastructure",
+        description: "Design and implementation of water supply and wastewater treatment solutions with a focus on climate resilience and long-term sustainability.",
     },
     {
-        title: "Crypto currency design",
-        description: "",
+        title: "Project & Stakeholder Management",
+        description: "End-to-end project coordination including planning, resource management, regulatory compliance, and client and contractor liaison.",
     },
     {
-        title: "Research methodologies",
-        description: "",
-    },
-     {
-        title: "Process optimisation",
-        description: "",
+        title: "BIM & 3D Modelling",
+        description: "Production of detailed 3D infrastructure models using Revit and AutoCAD Civil 3D for design, tendering, and construction phases.",
     },
     {
-        title: "Strategic planning",
-        description: "",
+        title: "Stormwater & Flood Management",
+        description: "Flood routing, catchment runoff calculations, and stormwater channel design to mitigate environmental and flood risk impacts.",
+    },
+    {
+        title: "Health, Safety & CDM Compliance",
+        description: "Integration of CDM regulations, risk assessments, and safety protocols across all project phases from design through to execution.",
     },
 ];
 
-const dataportfolio = [{
-        img: "https://picsum.photos/id/48/400/?grayscale",
-        description: "Casino enterprise software",
+const dataportfolio = [
+    {
+        img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&q=80",
+        description: "Drainage Infrastructure Design",
         link: "#",
     },
     {
-        img: "https://picsum.photos/400/600/?grayscale",
-        description: "Blockchain conceptual architectural designs",
+        img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80",
+        description: "Construction Site Management",
         link: "#",
     },
     {
-        img: "https://picsum.photos/400/600/?grayscale",
-        description: "Observability and management",
+        img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&q=80",
+        description: "Civil Engineering Design",
         link: "#",
     },
     {
-         img: "https://picsum.photos/400/800/?grayscale",
-        description: "Backend infrastructure",
+        img: "https://images.unsplash.com/photo-1590736704728-f4730bb30770?w=400&q=80",
+        description: "Water Infrastructure Projects",
         link: "#",
     },
     {
-        img: "https://picsum.photos/400/300/?grayscale",
-        description: "Leadership",
+        img: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400&q=80",
+        description: "Urban Infrastructure",
         link: "#",
     },
     {
-        img: "https://picsum.photos/id/180/400/?grayscale",
-        description: "Research",
-        link: "#",
-    },
-
-    {
-         img: "https://picsum.photos/400/700/?grayscale",
-        description: "Crypto currency trading",
-    
+        img: "https://images.unsplash.com/photo-1498084393753-b411b2d26b34?w=400&q=80",
+        description: "Bridge Engineering",
         link: "#",
     },
     {
-        img: "https://picsum.photos/400/300/?grayscale",
-        description: "DevOps",
+        img: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=400&q=80",
+        description: "Structural Design",
         link: "#",
     },
     {
-        img: "https://picsum.photos/400/?grayscale",
-        description: "",
+        img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&q=80",
+        description: "Large-Scale Infrastructure",
         link: "#",
     },
     {
-        img: "https://picsum.photos/id/366/400/550/?grayscale",
-        description: "Technology",
+        img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80",
+        description: "Environmental Engineering",
         link: "#",
     },
     {
-        img: "https://picsum.photos/400/?grayscale",
-        description: "Casino backoffice management",
+        img: "https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?w=400&q=80",
+        description: "Solar PV Projects",
         link: "#",
     },
     {
-        img: "https://picsum.photos/400/700/?grayscale",
-        description: "Crypto currency design",
+        img: "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?w=400&q=80",
+        description: "Site Planning & Layout",
         link: "#",
     },
     {
-        img: "https://picsum.photos/400/550/?grayscale",
-        description: "Quality",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/id/318/400/?grayscale",
-        description: "Travel",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/700/?grayscale",
-        description: "Health",
+        img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&q=80",
+        description: "Sustainable Engineering",
         link: "#",
     },
 ];
 
 const contactConfig = {
-    YOUR_EMAIL: "shayen.ramsahai@gmail.com",
-    YOUR_FONE: "+447624290895",
-    description: "Feel free to email me or contact me on whatsapp for any queries",
-    // creat an emailjs.com account 
-    // check out this tutorial https://www.emailjs.com/docs/examples/reactjs/
+    YOUR_EMAIL: "delecia.reddy@gmail.com",
+    YOUR_FONE: "+353 87 229 2855",
+    description: "Feel free to get in touch for project enquiries, collaboration opportunities, or any queries.",
     YOUR_SERVICE_ID: "service_id",
     YOUR_TEMPLATE_ID: "template_id",
     YOUR_USER_ID: "user_id",
 };
 
 const socialprofils = {
-    github: "https://github.com",
-    facebook: "https://facebook.com",
-    linkedin: "https://linkedin.com",
-    twitter: "https://twitter.com",
+    github: "https://github.com/Deleciar",
+    linkedin: "https://www.linkedin.com/in/delecia-reddy",
 };
+
 export {
     meta,
     dataabout,
