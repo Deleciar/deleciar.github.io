@@ -13,12 +13,12 @@ const introdata = {
         third: "Water & Infrastructure Expert",
     },
     description: "Experienced Civil Engineer with over 10 years across South Africa, Ireland and the United Kingdom, specialising in drainage design, water infrastructure, BIM modelling, and sustainable project delivery.",
-    your_img_url: "https://images.unsplash.com/photo-1581092450399-5ae75a7a360f?w=900&q=80",
+    your_img_url: "https://images.unsplash.com/photo-1741201663493-6f032d310a7f?w=900&q=80",
 };
 
 const dataabout = {
     title: "A bit about myself",
-    aboutme: "I am an experienced Civil and Project Engineer with over 10 years' experience spanning structural engineering, bridge design, mine water management, water and drainage infrastructure, and project management across Africa, Ireland and the United Kingdom. I have undertaken multifaceted roles encompassing drafting, 3D modelling, design, and project management, and have gained extensive on-site experience where prioritising health and safety has been a cornerstone of my approach. I am committed to staying abreast of the latest developments in my field, including Sustainable Drainage Systems (SuDS), and to delivering projects that are safe, cost-effective, and sustainable. I hold membership with Engineers Ireland (MIEI, AEng.) and Engineers Without Borders, and actively contribute to the Equality, Diversity and Inclusivity (EDI) committee within my organisation.",
+    aboutme: "I am an experienced Civil and Project Engineer with over 10 years of experience spanning structural engineering, bridge design, mine water management, water and drainage infrastructure, and project management across Africa, Ireland and the United Kingdom. I have undertaken multifaceted roles encompassing drafting, 3D modelling, design, and project management, and have gained extensive on-site experience where prioritising health and safety has been a cornerstone of my approach. I am committed to staying abreast of the latest developments in my field, including Sustainable Drainage Systems (SuDS), and to delivering projects that are safe, cost-effective, and sustainable. I hold membership with Engineers Ireland (MIEI, AEng.) and Engineers Without Borders, and actively contribute to the Equality, Diversity and Inclusivity (EDI) committee within my organisation. I pride myself on strong team management and communication skills, a proactive approach to continuous professional development, and a genuine drive to deliver infrastructure that supports communities and the environment.",
 };
 
 const qualifications = [
@@ -78,6 +78,9 @@ const skills = [
     { name: "Causeway Flow Drainage", value: 88 },
     { name: "Hydraulic Modelling and GIS / ArcGIS", value: 83 },
     { name: "Project Management", value: 87 },
+    { name: "Structural Design and Bridge Drafting", value: 82 },
+    { name: "MicroStation / Bentley CAD", value: 75 },
+    { name: "EPANET Hydraulic Analysis", value: 78 },
     { name: "Tedds", value: 80 },
 ];
 
@@ -91,20 +94,28 @@ const services = [
         description: "Design and implementation of water supply, water treatment, and wastewater treatment solutions with a focus on climate resilience, hydraulic modelling, long sections, and BIM Level 2 compliance.",
     },
     {
+        title: "Structural & Bridge Engineering",
+        description: "Generation of detailed reinforced concrete and structural steel drawings, bending schedules, and quantity estimates for bridges, footbridges, carriageway structures, and large-scale industrial facilities. Experienced in bridge inspection and structural integrity assessments across national road networks.",
+    },
+    {
         title: "Project & Stakeholder Management",
         description: "End-to-end project coordination including planning, resource management, EIA reports, Basis of Design documents, regulatory compliance, pre-development enquiries, and client and contractor liaison.",
     },
     {
         title: "BIM & 3D Modelling",
-        description: "Production of detailed 3D infrastructure models using Revit and AutoCAD Civil 3D for design, tender, and construction stages, including BIM Level 2 modelling, 3D pipe networks, and staged upgrade visualisations.",
+        description: "Production of detailed 3D infrastructure models using Revit and AutoCAD Civil 3D for design, tender, and construction stages, including BIM Level 2 modelling, 3D pipe networks, staged upgrade visualisations, and interactive construction phase models.",
     },
     {
         title: "Stormwater & Flood Risk Management",
         description: "Flood routing, catchment runoff calculations, stormwater channel sizing, pollution control dam design, and sediment trap design to mitigate environmental and flood risk impacts on infrastructure projects.",
     },
     {
+        title: "Geotechnical Testing & Site Inspection",
+        description: "Dynamic Cone Penetrometer (DCP) testing for soil compaction verification, foundation inspections, and structural integrity assessments across residential, commercial, and institutional projects throughout South Africa and Ireland.",
+    },
+    {
         title: "Health, Safety & CDM Compliance",
-        description: "Integration of CDM regulations, design risk assessments, EIA contributions, and safety protocols across all project phases. Experienced in Safe Pass, SHEQ inductions, and site inspection regimes.",
+        description: "Integration of CDM regulations, design risk assessments, EIA contributions, and safety protocols across all project phases. Experienced in Safe Pass, SHEQ inductions, manual handling, and site inspection regimes.",
     },
 ];
 
@@ -116,7 +127,7 @@ const dataportfolio = [
         date: "2022",
         category: "Renewable Energy / Drainage",
         description: "Solar PV Farm Drainage Design, England",
-        details: "Led the civil drainage design for the Higher Stockbridge Farm Solar PV project. Conducted site visit for assessment and evaluation, developed drainage schematics for the solar farm incorporating passive drainage features including v-drains, swales, filter strips, and infiltration ponds to manage surface water runoff. Calculated required material quantities and components, and created the civil Basis of Design (BOD) report for the project. Used 3D modelling software to model and verify runoff behaviour.",
+        details: "Led the civil drainage design for the Higher Stockbridge Farm Solar PV project. Conducted site visit for assessment and evaluation, developed drainage schematics for the solar farm incorporating passive drainage features including v-drains, swales, filter strips, and infiltration ponds to manage surface water runoff. Calculated required material quantities and components, and created the civil Basis of Design report for the project. Used 3D modelling software to model and verify runoff behaviour.",
     },
     {
         img: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&q=80",
@@ -155,6 +166,42 @@ const dataportfolio = [
         details: "Supervised technicians in drafting construction and as-built layouts for foul and water network upgrades across multiple sites in Ireland and Northern Ireland. Acted as the liaison between the Farrans construction contractor and the Nicholas O'Dwyer project team. Completed design risk assessments for each site, managed WwIA and foul/water connection applications to NI Water, and ensured compliance with statutory requirements throughout the construction phase.",
     },
     {
+        img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80",
+        title: "Whitehouse Primary School Car Park",
+        employer: "Nicholas O'Dwyer",
+        date: "2022",
+        category: "Civil / Drainage",
+        description: "New Car Park Development, Whitehouse Primary School, Northern Ireland",
+        details: "Supervised technicians in the development of planning and construction stage drawings for the new car park project at Whitehouse Primary School. Responsible for ensuring design drawings met planning requirements and construction specifications. Acted as liaison between the project team and clients throughout all stages, from initial planning submission through to construction documentation sign-off.",
+    },
+    {
+        img: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&q=80",
+        title: "Severn Trent Pipe Bridge Upgrades",
+        employer: "Nicholas O'Dwyer",
+        date: "2022",
+        category: "Water Infrastructure / BIM",
+        description: "Pipe Bridge Washout Chamber Upgrades, Severn Trent",
+        details: "Developed a detailed Revit model outlining the staged upgrade process for Severn Trent washout chamber improvements during a planned shutdown period. The Revit model illustrated each phase of the upgrade sequence, providing clarity for the construction team on sequencing and temporary works requirements. This BIM approach supported coordination between the design and construction teams, reducing risk during the critical shutdown window.",
+    },
+    {
+        img: "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?w=600&q=80",
+        title: "McGuiness Mechanical Workshop, Carnbane",
+        employer: "Nicholas O'Dwyer",
+        date: "2022",
+        category: "Drainage / Planning",
+        description: "New Mechanical Workshop and Offices, Carnbane Business Park, Northern Ireland",
+        details: "Prepared and submitted a pre-development application for the new mechanical workshop and office construction at Carnbane Business Park. Designed and evaluated drainage systems for the site, ensuring compliance with NI Water standards and planning requirements. Managed the drainage design process from initial concept through to planning submission, coordinating with the contractor and client throughout.",
+    },
+    {
+        img: "https://images.unsplash.com/photo-1536249355553-f7d3b978c2e0?w=600&q=80",
+        title: "Donegal T&V WwTW Tenders",
+        employer: "Nicholas O'Dwyer",
+        date: "2021 to 2022",
+        category: "Wastewater Treatment",
+        description: "Wastewater Treatment Works Upgrades, Kilmacrennan, Carrigart and Mountcharles, Ireland",
+        details: "Evaluated planning designs and drawings for upgrades to three wastewater treatment works in Donegal: Kilmacrennan, Carrigart, and Mountcharles. Prepared comprehensive Basis of Design reports for each site involved in the tender process. Ensured designs were aligned with Irish Water standards and regulatory requirements, and contributed to the preparation of tender documentation packages for each works upgrade.",
+    },
+    {
         img: "https://images.unsplash.com/photo-1590736704728-f4730bb30770?w=600&q=80",
         title: "Vartry Water Treatment Plant Upgrade",
         employer: "TOBIN Consulting Engineers",
@@ -171,6 +218,15 @@ const dataportfolio = [
         category: "Water Infrastructure",
         description: "Irish Water Network Upgrades, Midlands, Ireland",
         details: "Played a key role in the Water Networks Upgrade Project across the Irish Midlands for Irish Water. Developed environmental management plans (EMP) and Envirokit documentation, cost estimates, and design reports. Utilised ArcGIS mapping for project planning and requirements gathering. Updated the online facilities management system with all new connections completed by the contractor, and created work order maps for effective project implementation.",
+    },
+    {
+        img: "https://images.unsplash.com/photo-1511884642898-4c92516a4d0f?w=600&q=80",
+        title: "Roscommon & Claregalway Infrastructure Study",
+        employer: "TOBIN Consulting Engineers",
+        date: "2019 to 2021",
+        category: "Water Infrastructure / Planning",
+        description: "Strategic Water and Wastewater Infrastructure Study, Roscommon and Claregalway, Ireland",
+        details: "Developed a strategic infrastructure plan for Roscommon and Claregalway in line with each town's latest development plan. Reviewed all available preliminary reports and hydraulic model outputs. Prepared maps of agglomeration and existing wastewater infrastructure using Irish Water GIS and available land zoning records. Conducted zoning calculations and identified foul hydraulic loading to inform future network capacity requirements and upgrade priorities.",
     },
     {
         img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&q=80",
@@ -200,6 +256,42 @@ const dataportfolio = [
         details: "Contributed to the Lesotho Lowlands Bulk Water Supply Network project, assisting with pipeline layout, long section generation, and pump station design verification using AutoCAD Civil 3D, EPANET, and Vent-o-mat CAT software. Additionally created an interactive BIM 3D site model in Revit to illustrate construction phases for the Polokwane Water Treatment Plant, and explored 3D printing the model. Gained significant proficiency in 3D modelling under a tight deadline in a small team of four.",
     },
     {
+        img: "https://images.unsplash.com/photo-1618022325802-7e5e732d97a1?w=600&q=80",
+        title: "Polokwane WWTW Upgrade & BIM Model",
+        employer: "SMEC South Africa",
+        date: "2016 to 2018",
+        category: "Wastewater Treatment / BIM",
+        description: "Polokwane Wastewater Treatment Plant Upgrade, Limpopo, South Africa",
+        details: "Contributed to the decommissioning of the Seshego WWTW and the design and upgrade of the Polokwane WWTW, including drop structures and pipeline rerouting. Created a 3D BIM model of the site using Revit to showcase the various phases of construction, and produced physical 3D printed models for client presentations. Generated tender and construction drawings for the WWTW including pipe long sections. This project provided strong foundations in BIM Level 2 modelling and construction phase communication.",
+    },
+    {
+        img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+        title: "Kampala City Bridges, Uganda",
+        employer: "SMEC South Africa",
+        date: "2016 to 2017",
+        category: "Bridge / Structural Engineering",
+        description: "Reinforced Concrete Bridge Design, Portbell, Kayemba and Queensway, Uganda",
+        details: "Contributed to the design of three reinforced concrete carriageway bridges at Portbell, Kayemba, and Queensway in Kampala, Uganda. Generated detailed concrete and reinforcement drawings including bending schedules for each bridge structure. Calculated material quantities and obtained relevant rates for the Bill of Quantities, supporting procurement and cost planning for each crossing.",
+    },
+    {
+        img: "https://images.unsplash.com/photo-1515266591878-f73d5d0c8b01?w=600&q=80",
+        title: "Cornubia Boulevard Bridge, KwaZulu-Natal",
+        employer: "SMEC South Africa",
+        date: "2016",
+        category: "Bridge / Structural Engineering",
+        description: "Reinforced Concrete Carriageway Bridge, Cornubia Mixed-Use Development, KZN, South Africa",
+        details: "Contributed to the design of a reinforced concrete carriageway bridge at the new Cornubia mixed land-use development in KwaZulu-Natal. Generated detailed concrete and reinforcement drawings including bending schedules for the bridge deck and substructure. Calculated material quantities and obtained relevant rates for the Bill of Quantities to support the tender documentation package.",
+    },
+    {
+        img: "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=600&q=80",
+        title: "SANRAL Bridge & Culvert Inspections, N2",
+        employer: "SMEC South Africa",
+        date: "2015 to 2016",
+        category: "Bridge Inspection",
+        description: "Routine Bridge and Culvert Inspections, National Route 2, KZN, South Africa",
+        details: "Assisted with routine inspections of all SANRAL culverts and bridges along the National Route 2 between Durban and Richards Bay, conducted in accordance with SANRAL standards and inspection protocols. Supported the engineer with condition assessments and data capturing into the SANRAL bridge and culvert database. Inspections contributed to the national bridge management programme to prioritise maintenance and rehabilitation works across the national road network.",
+    },
+    {
         img: "https://images.unsplash.com/photo-1498084393753-b411b2d26b34?w=600&q=80",
         title: "PRASA Durban Re-signalling, Railway Footbridges",
         employer: "BVI Consulting Engineers",
@@ -207,6 +299,24 @@ const dataportfolio = [
         category: "Structural / Bridge Engineering",
         description: "Pedestrian Footbridge Design, Durban, South Africa",
         details: "Generated structural steel construction drawings for the design, construction, and rehabilitation of pedestrian footbridges at various railway stations across KwaZulu-Natal as part of the PRASA Durban Re-signalling Project. Conducted site inspections and attended site meetings. Also completed structural integrity assessments on nine Elangeni Further Education and Training (FET) College campuses across KZN, preparing detailed inspection reports for each.",
+    },
+    {
+        img: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80",
+        title: "Harbour Bridge Park Warehouse, Durban",
+        employer: "BVI Consulting Engineers",
+        date: "2014 to 2015",
+        category: "Structural / Industrial",
+        description: "13,000m² Warehouse Facility, Durban, South Africa",
+        details: "Contributed to the structural design and documentation of a new 13,000m² warehouse facility at Harbour Bridge Park in Durban. Prepared detailed steel and concrete drawings, reinforcement drawings, and bending schedules. Produced site and trench layout drawings including precise setting-out coordinates. Conducted Dynamic Cone Penetrometer (DCP) testing on site to verify soil compaction levels, and carried out site visits and client liaison throughout the construction phase.",
+    },
+    {
+        img: "https://images.unsplash.com/photo-1580894908361-967195033215?w=600&q=80",
+        title: "SAPS Police Stations, KwaZulu-Natal",
+        employer: "BVI Consulting Engineers",
+        date: "2013 to 2015",
+        category: "Structural / Public Works",
+        description: "Design and Upgrade of Police Service Stations, KZN, South Africa",
+        details: "Contributed to the design and upgrade of South African Police Service stations at Sawoti, Ntuzuma, and Kwamashu in KwaZulu-Natal, on behalf of the Department of Public Works. Generated detailed concrete and reinforcement drawings including bending schedules for new facility construction. Calculated material quantities and obtained rates for the Bill of Quantities. Conducted site inspections and quality checks of reinforcement, beams, columns, and foundations before and after concrete pours.",
     },
     {
         img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80",
@@ -217,6 +327,19 @@ const dataportfolio = [
         description: "1,500+ Housing Units, Amatikwe, Hammarsdale and Nibela, SA",
         details: "Coordinated construction progress for over 1,500 low-cost housing units across the Amatikwe, Hammarsdale, and Nibela Low-Cost Housing Schemes in KwaZulu-Natal. Conducted Dynamic Cone Penetration (DCP) tests on each site to verify soil compaction percentages, performed foundation, wall-plate level, and final inspections, and issued site instructions and approvals. Also contributed to the design and upgrade of South African Police Service Stations and a magistrates court for the Department of Public Works, generating detailed concrete and reinforcement drawings and bending schedules.",
     },
+];
+
+const training = [
+    "CDM (Construction Design and Management) Regulations Awareness",
+    "Causeway Flow Drainage Software",
+    "AutoCAD Civil 3D",
+    "Revit 3D Modelling",
+    "Managing People Through Projects",
+    "Project Management Fundamentals",
+    "Safe Pass (Site Safety)",
+    "Anti-Bribery and Anti-Money Laundering",
+    "Manual Handling",
+    "Internet Security at Work",
 ];
 
 const contactConfig = {
@@ -241,6 +364,7 @@ export {
     worktimeline,
     skills,
     services,
+    training,
     introdata,
     contactConfig,
     socialprofils,

@@ -11,6 +11,7 @@ import {
   qualifications,
   skills,
   services,
+  training,
   contactConfig,
   socialprofils,
 } from "../../content_option";
@@ -132,13 +133,23 @@ export const Resume = () => {
         </Section>
 
         {/* Professional Memberships */}
-        <Section className="rv_section rv_last">
+        <Section className="rv_section">
           <motion.h3 variants={fadeUp} className="rv_section_title">Professional Memberships</motion.h3>
           <motion.ul variants={fadeUp} className="rv_membership_list">
-            <li>Engineers Ireland (MIEI, AEng.)</li>
-            <li>Engineers Without Borders</li>
-            <li>EDI Committee Member</li>
+            <li>Engineers Ireland (MIEI, AEng.) — Member since 2022</li>
+            <li>Engineers Without Borders — Member since 2020</li>
+            <li>Equality, Diversity and Inclusivity (EDI) Committee Member</li>
           </motion.ul>
+        </Section>
+
+        {/* Training & CPD */}
+        <Section className="rv_section rv_last">
+          <motion.h3 variants={fadeUp} className="rv_section_title">Training &amp; CPD</motion.h3>
+          <motion.div variants={fadeUp} className="rv_skills_grid">
+            {training.map((item, i) => (
+              <span key={i} className="rv_skill_tag">{item}</span>
+            ))}
+          </motion.div>
         </Section>
 
       </Container>
