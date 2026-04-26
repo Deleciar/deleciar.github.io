@@ -149,7 +149,7 @@ const MatrixCanvas = () => {
         dfreq: 0.15 + Math.random() * 0.32,
         dphase: Math.random() * Math.PI * 2,
         life: prePopulate ? 10 + Math.random() * 80 : 0,
-        alpha: 0.10 + Math.random() * 0.24,
+        alpha: 0.22 + Math.random() * 0.34,
         isGraph,
         graphFn: isGraph
           ? GRAPH_FNS[Math.floor(Math.random() * GRAPH_FNS.length)]

@@ -13,7 +13,7 @@ const introdata = {
         third: "Water & Infrastructure Expert",
     },
     description: "Experienced Civil Engineer with over 10 years across South Africa, Ireland and the United Kingdom, specialising in drainage design, water infrastructure, BIM modelling, and sustainable project delivery.",
-    your_img_url: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=900&q=80",
+    your_img_url: "https://images.unsplash.com/photo-1581092450399-5ae75a7a360f?w=900&q=80",
 };
 
 const dataabout = {
