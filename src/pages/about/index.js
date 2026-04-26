@@ -2,14 +2,25 @@ import React from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
+import { motion } from "framer-motion";
 import {
   dataabout,
   meta,
   worktimeline,
   skills,
   services,
-  qualifications, // Import the qualifications array
+  qualifications,
 } from "../../content_option";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55 } },
+};
+
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12 } },
+};
 
 export const About = () => {
   return (
@@ -26,95 +37,128 @@ export const About = () => {
             <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>
-        <Row className="sec_sp">
-          <Col lg="5">
-            <h3 className="color_sec py-4">{dataabout.title}</h3>
-          </Col>
-          <Col lg="7" className="d-flex align-items-center">
-            <div>
-              <p>{dataabout.aboutme}</p>
-            </div>
-          </Col>
-        </Row>
-        <Row className="sec_sp">
-          <Col lg="5">
-            <h3 className="color_sec py-4">Qualifications</h3>
-          </Col>
-          <Col lg="7">
-            <table className="table caption-top">
-              <tbody>
-                {qualifications.map((data, i) => {
-                  return (
-                    <tr key={i}>
-                      <th scope="row">{data.degree}</th>
-                      <td>{data.university}</td>
-                      <td>{data.country}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </Col>
-        </Row>
-        <Row className="sec_sp">
-          <Col lg="5">
-            <h3 className="color_sec py-4">Work Timeline</h3>
-          </Col>
-          <Col lg="7">
-            <table className="table caption-top">
-              <tbody>
-                {worktimeline.map((data, i) => {
-                  return (
-                    <tr key={i}>
-                      <th scope="row">{data.jobtitle}</th>
-                      <td>{data.where}</td>
-                      <td>{data.date}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </Col>
-        </Row>
-        <Row className="sec_sp">
-          <Col lg="5">
-            <h3 className="color_sec py-4">Skills</h3>
-          </Col>
-          <Col lg="7">
-            {skills.map((data, i) => {
-              return (
-                <div key={i}>
+
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+        >
+          <Row className="sec_sp">
+            <Col lg="5">
+              <motion.h3 variants={fadeUp} className="color_sec py-4">{dataabout.title}</motion.h3>
+            </Col>
+            <Col lg="7" className="d-flex align-items-center">
+              <motion.div variants={fadeUp}>
+                <p>{dataabout.aboutme}</p>
+              </motion.div>
+            </Col>
+          </Row>
+        </motion.div>
+
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+        >
+          <Row className="sec_sp">
+            <Col lg="5">
+              <motion.h3 variants={fadeUp} className="color_sec py-4">Qualifications</motion.h3>
+            </Col>
+            <Col lg="7">
+              <motion.div variants={fadeUp}>
+                <table className="table caption-top">
+                  <tbody>
+                    {qualifications.map((data, i) => (
+                      <tr key={i}>
+                        <th scope="row">{data.degree}</th>
+                        <td>{data.university}</td>
+                        <td>{data.country}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </motion.div>
+            </Col>
+          </Row>
+        </motion.div>
+
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+        >
+          <Row className="sec_sp">
+            <Col lg="5">
+              <motion.h3 variants={fadeUp} className="color_sec py-4">Work Timeline</motion.h3>
+            </Col>
+            <Col lg="7">
+              <motion.div variants={fadeUp}>
+                <table className="table caption-top">
+                  <tbody>
+                    {worktimeline.map((data, i) => (
+                      <tr key={i}>
+                        <th scope="row">{data.jobtitle}</th>
+                        <td>{data.where}</td>
+                        <td>{data.date}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </motion.div>
+            </Col>
+          </Row>
+        </motion.div>
+
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+        >
+          <Row className="sec_sp">
+            <Col lg="5">
+              <motion.h3 variants={fadeUp} className="color_sec py-4">Skills</motion.h3>
+            </Col>
+            <Col lg="7">
+              {skills.map((data, i) => (
+                <motion.div key={i} variants={fadeUp}>
                   <h3 className="progress-title">{data.name}</h3>
                   <div className="progress">
                     <div
                       className="progress-bar"
-                      style={{
-                        width: `${data.value}%`,
-                      }}
-                    >
-                      <div className="progress-value">{data.value}%</div>
-                    </div>
+                      style={{ width: `${data.value}%` }}
+                    />
                   </div>
-                </div>
-              );
-            })}
-          </Col>
-        </Row>
-        <Row className="sec_sp">
-          <Col lang="5">
-            <h3 className="color_sec py-4">Services</h3>
-          </Col>
-          <Col lg="7">
-            {services.map((data, i) => {
-              return (
-                <div className="service_ py-4" key={i}>
+                </motion.div>
+              ))}
+            </Col>
+          </Row>
+        </motion.div>
+
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
+          <Row className="sec_sp">
+            <Col lang="5">
+              <motion.h3 variants={fadeUp} className="color_sec py-4">Services</motion.h3>
+            </Col>
+            <Col lg="7">
+              {services.map((data, i) => (
+                <motion.div variants={fadeUp} className="service_ py-4" key={i}>
                   <h5 className="service__title">{data.title}</h5>
                   <p className="service_desc">{data.description}</p>
-                </div>
-              );
-            })}
-          </Col>
-        </Row>
+                </motion.div>
+              ))}
+            </Col>
+          </Row>
+        </motion.div>
+
       </Container>
     </HelmetProvider>
   );
