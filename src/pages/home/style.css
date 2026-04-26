@@ -50,13 +50,23 @@ section {
     pointer-events: none;
 }
 
-/* Semi-transparent dark overlay so text stays readable */
+/* Dark overlay — left half only, so photo on the right shows cleanly */
 .home_bg_overlay {
     position: absolute;
-    inset: 0;
-    background: rgba(2, 5, 15, 0.48);
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(2, 5, 15, 0.52);
     z-index: 1;
     pointer-events: none;
+}
+
+@media (max-width: 991.98px) {
+    .home_matrix_canvas,
+    .home_bg_overlay {
+        display: none;
+    }
 }
 
 @media (max-width:991.98px) {
@@ -119,7 +129,6 @@ section {
     min-height: 700px;
     position: relative;
     z-index: 2;
-    opacity: 0.18;
 }
 
 .ac_btn {

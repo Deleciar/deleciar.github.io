@@ -1,13 +1,131 @@
 import { useRef, useEffect } from "react";
 
-// Engineering-themed matrix rain: hydraulics, Greek letters, structural maths
-const chars = "0123456789πφΔΣΩ∇√∫∂∞≈±αβγδεηθλμνρστωQVPAHgkn";
-const pick = () => chars[Math.floor(chars.length * Math.random())];
+// ── Real engineering equations, prominently featuring hydraulics,
+//    Manning's, Bernoulli, quadratic, and structural mechanics ──
+const EQUATIONS = [
+  // Bernoulli's equation (multiple forms)
+  "P + ½ρV² + ρgh = const",
+  "P₁/ρg + V₁²/2g + z₁ = P₂/ρg + V₂²/2g + z₂",
+  "H = p/γ + V²/2g + z",
+  "Δh = V²/2g",
 
-const LAYERS = [
-  { fs: 11, speed: 11, alpha: 0.13, r:  0, g: 155, b: 190, density: 0.42 },
-  { fs: 15, speed: 18, alpha: 0.34, r:  0, g: 185, b: 215, density: 0.30 },
-  { fs: 20, speed: 27, alpha: 0.56, r: 15, g: 210, b: 195, density: 0.13 },
+  // Manning's equation
+  "V = (1/n) R^(2/3) S^(1/2)",
+  "Q = (1/n) A R^(2/3) S^(1/2)",
+  "n = 0.013  (concrete pipe)",
+  "n = 0.035  (grass swale)",
+  "n = 0.025  (natural stream)",
+
+  // Hydraulic / fluid mechanics
+  "Q = A · V",
+  "Q = Cd · A · √(2gh)",
+  "Q = C · i · A  (Rational Method)",
+  "Re = ρVD / μ",
+  "Fr = V / √(gD)",
+  "hf = f · L · V² / (2gD)",
+  "hf = 4fLV² / 2gD  (Darcy-Weisbach)",
+  "v* = √(τ₀ / ρ)  (shear velocity)",
+  "q = k · i  (Darcy's Law)",
+  "Q = C · b · H^(3/2)  (weir)",
+  "τ₀ = ρgRS  (bed shear stress)",
+
+  // Quadratic formula
+  "ax² + bx + c = 0",
+  "x = (−b ± √(b² − 4ac)) / 2a",
+  "Δ = b² − 4ac  (discriminant)",
+
+  // Structural / mechanics
+  "σ = M · y / I  (bending stress)",
+  "τ = VQ / Ib  (shear stress)",
+  "δ = PL³ / 3EI  (cantilever deflection)",
+  "M = wL² / 8  (UDL midspan moment)",
+  "ε = σ / E  (Hooke's Law)",
+  "σ = F / A",
+  "τ = c' + σ' tan(φ')  (Mohr-Coulomb)",
+
+  // Stormwater / hydrology
+  "Tc = (L^0.8 (S+1)^0.7) / (1140 √Y)",
+  "S = Cc · log(σ'₁/σ'₀) / (1+e₀)",
+  "i = a / (t + b)ⁿ  (IDF)",
+
+  // Mathematics
+  "a² + b² = c²  (Pythagoras)",
+  "A = πr²",
+  "∇²φ = 0  (Laplace)",
+  "∂u/∂t = α · ∂²u/∂x²  (diffusion)",
+  "∫₀^∞ e^(−x²) dx = √π / 2",
+  "F = ma",
+  "g = 9.81 m/s²",
+  "ρ_w = 1000 kg/m³",
+];
+
+// ── Mini graph drawing helpers ──
+const drawSine = (ctx, x, y, alpha) => {
+  const W = 90, A = 14;
+  ctx.beginPath();
+  for (let i = 0; i <= W; i += 2) {
+    const py = y - A * Math.sin((i / W) * Math.PI * 3);
+    i === 0 ? ctx.moveTo(x + i, py) : ctx.lineTo(x + i, py);
+  }
+  ctx.strokeStyle = `rgba(0, 195, 185, ${alpha})`;
+  ctx.lineWidth = 1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(x - 2, y);
+  ctx.lineTo(x + W + 2, y);
+  ctx.strokeStyle = `rgba(0, 195, 185, ${alpha * 0.25})`;
+  ctx.stroke();
+};
+
+const drawBell = (ctx, x, y, alpha) => {
+  const W = 90, H = 30;
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+  for (let i = 0; i <= W; i += 2) {
+    const t = (i / W - 0.5) * 6;
+    ctx.lineTo(x + i, y - H * Math.exp(-0.5 * t * t));
+  }
+  ctx.lineTo(x + W, y);
+  ctx.strokeStyle = `rgba(75, 165, 220, ${alpha})`;
+  ctx.lineWidth = 1;
+  ctx.stroke();
+};
+
+const drawHydrograph = (ctx, x, y, alpha) => {
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+  ctx.lineTo(x + 28, y - 30);
+  ctx.lineTo(x + 88, y);
+  ctx.strokeStyle = `rgba(0, 190, 180, ${alpha})`;
+  ctx.lineWidth = 1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(x, y + 3);
+  ctx.lineTo(x + 88, y + 3);
+  ctx.moveTo(x, y - 33);
+  ctx.lineTo(x, y + 3);
+  ctx.strokeStyle = `rgba(0, 190, 180, ${alpha * 0.3})`;
+  ctx.stroke();
+};
+
+const drawParabola = (ctx, x, y, alpha) => {
+  const W = 80, H = 28;
+  ctx.beginPath();
+  for (let i = 0; i <= W; i += 2) {
+    const t = (i / W - 0.5) * 2;
+    ctx.lineTo(x + i, y - H * (1 - t * t));
+  }
+  ctx.strokeStyle = `rgba(100, 175, 215, ${alpha})`;
+  ctx.lineWidth = 1;
+  ctx.stroke();
+};
+
+const GRAPH_FNS = [drawSine, drawBell, drawHydrograph, drawParabola];
+
+const COLORS = [
+  (a) => `rgba(0, 200, 188, ${a})`,    // teal
+  (a) => `rgba(72, 162, 218, ${a})`,   // blue
+  (a) => `rgba(148, 188, 208, ${a})`,  // steel grey
 ];
 
 const MatrixCanvas = () => {
@@ -17,30 +135,38 @@ const MatrixCanvas = () => {
     const canvas = ref.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
-    let raf, w, h, drops;
+    let raf;
+    let w, h, halfW;
+    let particles = [];
+
+    const makePart = (prePopulate = false) => {
+      const isGraph = Math.random() < 0.16;
+      return {
+        x: 20 + Math.random() * Math.max(10, (halfW || w / 2) - 50),
+        y: prePopulate ? Math.random() * h : -(30 + Math.random() * 250),
+        vy: 14 + Math.random() * 24,
+        drift: (Math.random() - 0.5) * 20,
+        dfreq: 0.15 + Math.random() * 0.32,
+        dphase: Math.random() * Math.PI * 2,
+        life: prePopulate ? 10 + Math.random() * 80 : 0,
+        alpha: 0.10 + Math.random() * 0.24,
+        isGraph,
+        graphFn: isGraph
+          ? GRAPH_FNS[Math.floor(Math.random() * GRAPH_FNS.length)]
+          : null,
+        text: isGraph
+          ? null
+          : EQUATIONS[Math.floor(Math.random() * EQUATIONS.length)],
+        fontSize: 10 + Math.floor(Math.random() * 6),
+        color: COLORS[Math.floor(Math.random() * COLORS.length)],
+      };
+    };
 
     const init = () => {
       w = canvas.width = window.innerWidth;
       h = canvas.height = window.innerHeight;
-      drops = [];
-      LAYERS.forEach((layer) => {
-        const colW = 1.2 * layer.fs;
-        const cols = Math.ceil(w / colW);
-        for (let c = 0; c < cols; c++) {
-          if (Math.random() > layer.density) continue;
-          const len = 10 + Math.floor(20 * Math.random());
-          drops.push({
-            li: LAYERS.indexOf(layer),
-            x: c * colW,
-            y: Math.random() * -h,
-            speed: layer.speed * (0.7 + 0.6 * Math.random()),
-            trail: Array.from({ length: len }, pick),
-            timer: 0,
-            interval: 0.10 + 0.15 * Math.random(),
-            steel: Math.random() < 0.09,
-          });
-        }
-      });
+      halfW = w / 2;
+      particles = Array.from({ length: 42 }, (_, i) => makePart(i < 30));
     };
 
     let last = 0;
@@ -48,38 +174,32 @@ const MatrixCanvas = () => {
       const dt = Math.min((ts - last) / 1000, 0.05);
       last = ts;
 
-      ctx.fillStyle = "rgba(2,5,12,0.13)";
-      ctx.fillRect(0, 0, w, h);
+      ctx.clearRect(0, 0, w, h);
 
-      for (const drop of drops) {
-        const layer = LAYERS[drop.li];
-        drop.y += layer.speed * dt;
-        drop.timer += dt;
-        if (drop.timer >= drop.interval) {
-          drop.timer = 0;
-          drop.trail[Math.floor(Math.random() * drop.trail.length)] = pick();
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.life += dt;
+        p.y += p.vy * dt;
+
+        if (p.y > h + 80) {
+          particles[i] = makePart(false);
+          continue;
         }
 
-        ctx.font = `${layer.fs}px "Courier New", monospace`;
+        const cx = p.x + p.drift * Math.sin(p.dfreq * p.life + p.dphase);
+        const fadeIn  = p.y < h * 0.14 ? Math.max(0, p.y / (h * 0.14)) : 1;
+        const fadeOut = p.y > h * 0.83 ? Math.max(0, (h - p.y) / (h * 0.17)) : 1;
+        const alpha   = p.alpha * fadeIn * fadeOut;
+        if (alpha < 0.005) continue;
 
-        for (let t = 0; t < drop.trail.length; t++) {
-          const cy = drop.y - t * layer.fs;
-          if (cy < -layer.fs || cy > h + layer.fs) continue;
-          const fade = 1 - t / drop.trail.length;
-          if (t === 0) {
-            ctx.fillStyle = "rgba(195,242,235,0.92)";
-          } else {
-            const a = (layer.alpha * fade * fade).toFixed(3);
-            ctx.fillStyle = drop.steel
-              ? `rgba(160,190,210,${a})`
-              : `rgba(${layer.r},${layer.g},${layer.b},${a})`;
-          }
-          ctx.fillText(drop.trail[t], drop.x, cy);
-        }
-
-        if (drop.y - drop.trail.length * layer.fs > h) {
-          drop.y = -Math.random() * h * 0.4;
-          drop.trail = Array.from({ length: drop.trail.length }, pick);
+        if (p.isGraph) {
+          ctx.save();
+          p.graphFn(ctx, cx, p.y, alpha);
+          ctx.restore();
+        } else {
+          ctx.font = `italic ${p.fontSize}px Georgia, 'Times New Roman', serif`;
+          ctx.fillStyle = p.color(alpha);
+          ctx.fillText(p.text, cx, p.y);
         }
       }
 
