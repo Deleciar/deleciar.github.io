@@ -1,3 +1,35 @@
+/* ── Page wrapper & stars canvas ── */
+body:has(.portfolio-page) {
+    background: #02030c !important;
+}
+
+.portfolio-page {
+    min-height: 100vh;
+    position: relative;
+}
+
+.po_stars_canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.po_container {
+    position: relative;
+    z-index: 1;
+}
+
+.portfolio-page .display-4,
+.portfolio-page .t_border {
+    color: #fff !important;
+    border-color: rgba(255,255,255,0.35) !important;
+}
+
+/* ── Portfolio grid ── */
 .po_items_ho {
     column-width: 15em;
     -moz-column-width: 15em;

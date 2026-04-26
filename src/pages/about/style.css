@@ -1,3 +1,29 @@
+/* ── Page wrapper & background canvas ── */
+body:has(.about-page) {
+    background: #02030d !important;
+}
+
+.about-page {
+    min-height: 100vh;
+    position: relative;
+}
+
+.ab_bg_canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.ab-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Sections ── */
 .sec_sp {
     margin-bottom: calc(3rem + 5.128vw)
 }
