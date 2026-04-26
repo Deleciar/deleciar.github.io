@@ -46,11 +46,6 @@ const worktimeline = [
         date: "Aug 2021 to Present",
     },
     {
-        jobtitle: "Graduate Civil Engineer",
-        where: "Nicholas O'Dwyer Consulting Engineers, Northern Ireland",
-        date: "Aug 2020 to Aug 2021",
-    },
-    {
         jobtitle: "Design Engineer",
         where: "TOBIN Consulting Engineers, Galway, Ireland",
         date: "Feb 2019 to Aug 2021",
